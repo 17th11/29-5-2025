@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -38,6 +39,13 @@
       resize: vertical;
       margin-top: 16px;
     }
+
+    #last-updated {
+      font-size: 13px;
+      color: #666;
+      margin-top: 8px;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
@@ -52,47 +60,30 @@
     </div>
 
     <h3>📝 Ghi chú</h3>
-    <textarea id="note" aria-label="Ghi chú cá nhân" placeholder="Viết điều bạn nghĩ ở đây..."></textarea>
+    <textarea id="note" aria-label="Ghi chú cá nhân" placeholder="Viết điều bạn nghĩ ở đây...">
+Mình quen nhau cũng khá lâu không phải là quá dài để hiểu hết một con người, nhưng cũng đủ để nói rằng chúng ta đã hiểu về nhau ít nhiều. Bạn bảo tôi không lãng mạn, không đủ wow, không đủ vui tính. Nhưng tôi nghĩ, tôi không cần phải quá ồn ào hay lôi cuốn. Tôi muốn giữ lại những điều ấy cho người tôi yêu sau này, bởi vì tôi tin rằng tình yêu là một con dao hai lưỡi. Chỉ khi người kia rời đi, những tổn thương mới xuất hiện, và lúc ấy, cảm giác mất mát như một thứ độc tố, dần ăn mòn từng suy nghĩ trong tôi.
+
+Tình yêu là một hành trình đầy thử thách, và nó sẽ trở thành điều đẹp đẽ nhất khi cả hai người đều cùng sống vì nhau, cùng thay đổi để trở thành những phiên bản tốt hơn, chứ không phải chỉ một người thay đổi còn người kia vẫn mãi đứng im, cho rằng yêu đúng người thì không cần phải thay đổi. Tôi nghiêm túc khi xác định tìm hiểu bạn. Tôi biết mình không hoàn hảo. Tôi là người ích kỷ, nóng tính, dễ cáu giận và đôi khi bốc đồng, nhưng tôi hiểu rằng trong một mối quan hệ, cả hai cần phải công bằng với nhau, cần phải có sự trách nhiệm và tôn trọng lẫn nhau.
+
+Mối quan hệ cần sự chủ động từ cả hai phía. Tôi đã từng nói rằng tôi cũng có lúc mệt mỏi, đôi khi cảm thấy chán nản và lười biếng. Nhưng tôi không muốn bỏ lỡ bạn. Gặp nhau là duyên số, còn việc bên nhau hay không, thì là do sự cố gắng của cả hai. Nếu lỡ không được, tôi sẽ chẳng ân hận, nhưng nếu lỡ được thì sao? Tôi sẽ không để cơ hội vụt qua.
+
+Tôi là người suy nghĩ khá nhiều, nhưng vì tôi cảm thấy an toàn với điều đó. Dù vậy, tôi cũng hiểu rằng bạn cũng có những vấn đề của riêng mình. Bạn nóng tính, bảo thủ và đôi khi cực đoan. Bạn không dễ nghe lời khuyên, bạn luôn luôn cho rằng mình đúng, và không quan tâm đến ý kiến của ai. Tôi không phủ nhận rằng những suy nghĩ ấy đôi khi rất độc hại, giống như một người ái kỷ, luôn tự cho mình là trung tâm. Đôi khi, chỉ một câu hỏi cũng có thể khiến chúng ta cãi vã.
+
+Tình cảm khác với tình bạn. Tình bạn chỉ đơn giản là nhìn nhận những phần nổi của nhau, nhưng tình yêu thì đòi hỏi phải nhìn thấu cả những tầng băng chìm mà người kia giấu kín, và dù có như thế, chúng ta vẫn chấp nhận nó. Tình bạn mang lại niềm vui, còn tình yêu lại là một mớ hỗn độn của cảm xúc và ý chí, là sự hòa quyện của niềm vui và nỗi buồn đan xen. Chúng ta chỉ có một cuộc đời, và chỉ có một cơ hội để yêu thương thật sự.
+
+Chúng ta không biết liệu người này sẽ ở bên mình bao lâu, liệu người kia sẽ gặp mình bao lần nữa. Mỗi cuộc gặp gỡ đều mang một ý nghĩa riêng, nhưng đôi khi, ta lại không nhận ra giá trị thật sự của nó cho đến khi có thể mất đi.triệu hạt mưa không giọt nào rơi nhầm chỗ
+những người ta gặp không ai là ngẫu nhiên Nếu hôm nay là ngày cuối cùng ta gặp nhau, liệu chúng ta có đủ dũng cảm để nói ra những điều chưa từng thổ lộ, để không còn phải nuối tiếc về những lời chưa kịp nói?
+
+Có lẽ chúng ta không hợp nhau, nếu không thể thành đôi, thì thôi. Đành buông bỏ để bạn thoải mái, vui vẻ lên nhé. Mọi thứ rồi sẽ ổn thôi, Lâu dần, bạn cũng sẽ tìm được một người phù hợp hơn với mình. Còn tôi, chỉ là một đoạn ký ức, chẳng đáng để bạn nhớ tới
+
+P/s:
+
+trả cá về với nước
+trả thuyền về với bờ
+như chưa từng hẹn ước
+tất cả là tình cờ
+    </textarea>
+    <div id="last-updated"></div>
   </div>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js"></script>
-
-  <script>
-    // Your Firebase configuration (replace with your own)
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      databaseURL: "YOUR_DATABASE_URL",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    // Get a reference to the database
-    const database = firebase.database();
-    const noteRef = database.ref('notes/userNote'); // Path to store the note
-
-    // Get the textarea element
-    const note = document.getElementById('note');
-
-    // Load saved note from Firebase when the page loads
-    noteRef.on('value', (snapshot) => {
-      const data = snapshot.val();
-      note.value = data || ''; // Set textarea value to saved note or empty string
-    });
-
-    // Save note to Firebase whenever the user types
-    note.addEventListener('input', () => {
-      noteRef.set(note.value).catch((error) => {
-        console.error('Error saving note:', error);
-      });
-    });
-  </script>
 </body>
 </html>
