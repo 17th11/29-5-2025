@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghi chú & Nhạc SoundCloud</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      color: #333;
+    }
+
+    #content {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    #soundcloud-player iframe {
+      width: 100%;
+      height: 80px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #note {
+      width: 100%;
+      height: 300px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h2>🎵 Playlist của bạn</h2>
+    <div id="soundcloud-player">
+      <iframe 
+        allow="autoplay" 
+        scrolling="no" 
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/17th11/sets/untitled-playlist-4&color=%23ff5500&auto_play=false&show_artwork=false"
+      ></iframe>
+    </div>
+
+    <h3>📝 Ghi chú</h3>
+    <textarea id="note" aria-label="Ghi chú cá nhân" placeholder="Viết điều bạn nghĩ ở đây..."></textarea>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js"></script>
+
+  <script>
+    // Your Firebase configuration (replace with your own)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      databaseURL: "YOUR_DATABASE_URL",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the database
+    const database = firebase.database();
+    const noteRef = database.ref('notes/userNote'); // Path to store the note
+
+    // Get the textarea element
+    const note = document.getElementById('note');
+
+    // Load saved note from Firebase when the page loads
+    noteRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      note.value = data || ''; // Set textarea value to saved note or empty string
+    });
+
+    // Save note to Firebase whenever the user types
+    note.addEventListener('input', () => {
+      noteRef.set(note.value).catch((error) => {
+        console.error('Error saving note:', error);
+      });
+    });
+  </script>
+</body>
+</html>
